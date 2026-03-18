@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony package.
  *
@@ -16,8 +18,14 @@ if (\PHP_VERSION_ID >= 80000) {
 }
 
 if (!function_exists('normalizer_is_normalized')) {
-    function normalizer_is_normalized(string $string, int $form = p\Normalizer::FORM_C) { return p\Normalizer::isNormalized($string, $form); }
+    function normalizer_is_normalized(string $string, int $form = p\Normalizer::FORM_C)
+    {
+        return p\Normalizer::isNormalized($string, $form);
+    }
 }
 if (!function_exists('normalizer_normalize')) {
-    function normalizer_normalize(string $string, int $form = p\Normalizer::FORM_C) { return p\Normalizer::normalize($string, $form); }
+    function normalizer_normalize(string $string, int $form = p\Normalizer::FORM_C)
+    {
+        return p\Normalizer::normalize($string, $form);
+    }
 }

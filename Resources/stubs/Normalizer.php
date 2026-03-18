@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 class Normalizer extends Symfony\Polyfill\Intl\Normalizer\Normalizer
 {
     /**

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony package.
  *
@@ -61,10 +63,18 @@ class Normalizer
         }
 
         switch ($form) {
-            case self::NFC: $C = true; $K = false; break;
-            case self::NFD: $C = false; $K = false; break;
-            case self::NFKC: $C = true; $K = true; break;
-            case self::NFKD: $C = false; $K = true; break;
+            case self::NFC: $C = true;
+                $K = false;
+                break;
+            case self::NFD: $C = false;
+                $K = false;
+                break;
+            case self::NFKC: $C = true;
+                $K = true;
+                break;
+            case self::NFKD: $C = false;
+                $K = true;
+                break;
             default:
                 if (\defined('Normalizer::NONE') && \Normalizer::NONE == $form) {
                     return $s;
