@@ -110,7 +110,7 @@ class Normalizer
         return $r;
     }
 
-    private static function recompose($s)
+    private static function recompose(array $s): string
     {
         $ASCII = self::$ASCII;
         $compMap = self::$C;
@@ -194,7 +194,7 @@ class Normalizer
         return $result.$lastUchr.$tail;
     }
 
-    private static function decompose($s, $c)
+    private static function decompose(string $s, bool $c): string
     {
         $result = '';
 
@@ -299,7 +299,7 @@ class Normalizer
         return $result;
     }
 
-    private static function getData($file)
+    private static function getData(string $file)
     {
         if (file_exists($file = __DIR__.'/Resources/unidata/'.$file.'.php')) {
             return require $file;

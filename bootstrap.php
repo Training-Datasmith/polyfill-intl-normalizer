@@ -16,8 +16,8 @@ if (\PHP_VERSION_ID >= 80000) {
 }
 
 if (!function_exists('normalizer_is_normalized')) {
-    function normalizer_is_normalized($string, $form = p\Normalizer::FORM_C) { return p\Normalizer::isNormalized($string, $form); }
+    function normalizer_is_normalized(string $string, int $form = p\Normalizer::FORM_C) { return p\Normalizer::isNormalized($string, $form); }
 }
 if (!function_exists('normalizer_normalize')) {
-    function normalizer_normalize($string, $form = p\Normalizer::FORM_C) { return p\Normalizer::normalize($string, $form); }
+    function normalizer_normalize(string $string, int $form = p\Normalizer::FORM_C) { return p\Normalizer::normalize($string, $form); }
 }
