@@ -18,10 +18,21 @@
     "require": {
         "php": ">=7.2"
     },
+    "require-dev": {
+        "phpunit/phpunit": "8.5.56"
+    },
     "autoload": {
         "psr-4": { "Symfony\\Polyfill\\Intl\\Normalizer\\": "" },
         "files": [ "bootstrap.php" ],
         "classmap": [ "Resources/stubs" ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Symfony\\Polyfill\\Intl\\Normalizer\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
     },
     "suggest": {
         "ext-intl": "For best performance"

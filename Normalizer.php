@@ -178,7 +178,7 @@ class Normalizer
 
                 $uchr = substr($s, $i + $ulen, 3);
 
-                if ("\xE1\x86\xA7" <= $uchr && $uchr <= "\xE1\x87\x82") {
+                if ("\xE1\x86\xA7" < $uchr && $uchr <= "\xE1\x87\x82") {
                     $T = \ord($uchr[2]) - 0xA7;
                     0 > $T && $T += 0x40;
                     $ulen += 3;
