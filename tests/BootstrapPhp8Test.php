@@ -13,21 +13,18 @@ namespace Symfony\Polyfill\Intl\Normalizer\Tests;
 
 use PHPUnit\Framework\TestCase;
 
-if (\PHP_VERSION_ID >= 80000) {
-    class BootstrapPhp8Test extends TestCase
+class BootstrapPhp8Test extends TestCase
+{
+    /**
+     * @requires PHP 8
+     */
+    public function testPhp8NullStringBecomesEmpty()
     {
-        public function testPhp8NullStringBecomesEmpty()
-        {
-            $this->assertSame('', normalizer_normalize(null));
-            $this->assertTrue(normalizer_is_normalized(null));
+        $this->assertSame('', normalizer_normalize(null));
+        $this->assertTrue(normalizer_is_normalized(null));
 
-            $this->expectException(\ValueError::class);
-            $this->expectExceptionMessage('normalizer_normalize(): Argument #2 ($form) must be a a valid normalization form');
-            normalizer_normalize('a', null);
-        }
-    }
-} else {
-    class BootstrapPhp8Test extends TestCase
-    {
+        $this->expectException(\ValueError::class);
+        $this->expectExceptionMessage('normalizer_normalize(): Argument #2 ($form) must be a a valid normalization form');
+        normalizer_normalize('a', null);
     }
 }
